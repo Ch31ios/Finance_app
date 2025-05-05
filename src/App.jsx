@@ -2,13 +2,12 @@ import "./App.scss";
 
 import NotFound from "./components/NotFound/NotFound.jsx";
 
-import Login from "./pages/Login/login.jsx";
+import Login from "./pages/Login-Register/Login.jsx";
+import Register from "./pages/Login-Register/Register.jsx";
 
 import Analysis from "./pages/Analysis/Analysis.jsx";
 import CategoryManager from "./pages/CategoryManager/CategoryManager.jsx";
 import Dashboard from "./pages/Dashboard/Dashboard.jsx";
-
-import Register from "./pages/Register/Register.jsx";
 
 import TransactionForm from "./pages/TransactionForm/TransactionForm.jsx";
 import TransactionList from "./pages/TransactionList/TransactionList.jsx";
@@ -17,14 +16,18 @@ import {
   Route,
   Routes,
   BrowserRouter as Router,
+  Navigate,
 } from "react-router-dom";
 
 function App() {
   return (
     <Router>
       <Routes>
+        {/* Redirect root to login */}
+        <Route path="/" element={<Navigate to="/login" replace />} />
+
         {/* Initial route */}
-        <Route index element={<Login />} />
+        <Route path="/login" element={<Login />} />
 
         {/* Main routes */}
         <Route path="/analysis" element={<Analysis />} />

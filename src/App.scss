@@ -1,9 +1,5 @@
 :root {
-    --color-bg-app: #171717;
-
-    ::selection {
-        background-color: #404040;
-    }
+    --color-bg-app: #5865f2;
 }
 
 html {
@@ -13,6 +9,7 @@ html {
 * {
     margin: 0;
     padding: 0;
+    user-select: none;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
 }
