@@ -1,23 +1,12 @@
 import "./Dashboard.scss";
 
-import { Link } from "react-router-dom";
+import Menu from "../../components/Menu/Menu.jsx";
 
 function Dashboard() {
   return (
     <div className="dashboard-container">
 
-      <aside className="dashboard-menu">
-        <h2>Finance App</h2>
-        <nav>
-          <ul>
-            <li><Link to="/category-manager">Category Manager</Link></li>
-            <li><Link to="/transaction-form">New Transaction</Link></li>
-            <li><Link to="/transaction-list">Transaction List</Link></li>
-            <li><Link to="/analysis">Analysis</Link></li>
-          </ul>
-        </nav>
-        <button className="logout-button" onClick={() => window.location.href = "/login"}>Log Out</button>
-      </aside>
+      <Menu />
 
       <main className="dashboard-main">
         <h1>Dashboard</h1>
