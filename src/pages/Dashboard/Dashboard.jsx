@@ -14,15 +14,15 @@ function Dashboard() {
         <div className="dashboard-grid">
           <div className="dashboard-card balance">
             <h3>Available Balance</h3>
-            <p>$10,000</p>
+            <p>$5.000</p>
           </div>
           <div className="dashboard-card income">
             <h3>Total Income</h3>
-            <p>$25,000</p>
+            <p>$25.000</p>
           </div>
           <div className="dashboard-card expenses">
             <h3>Total Expenses</h3>
-            <p>$15,000</p>
+            <p>$15.000</p>
           </div>
         </div>
 
