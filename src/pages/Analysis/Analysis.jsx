@@ -1,5 +1,7 @@
 import "./Analysis.scss";
 
+import Menu from "../../components/Menu/Menu.jsx";
+
 function Analysis() {
   const ingresos = [1000, 1200, 950];
   const gastosPorCategoria = {
@@ -18,21 +20,29 @@ function Analysis() {
 
   return (
     <div className="analysis">
-      <h2>Análisis de Ingresos y Gastos</h2>
 
-      <div className="summary">
-        <p>Promedio de ingresos: ${promedioIngresos}</p>
-        <p>Promedio de gastos: ${promedioGastos}</p>
-        <p>Porcentaje de ahorro: {porcentajeAhorro}%</p>
-        <p>Relación ingresos/gastos: {totalIngresos - totalGastos}</p>
+      <Menu />
+
+      <div className="analysis-container">
+
+        <h2>Análisis de Ingresos y Gastos</h2>
+
+        <div className="summary">
+          <p>Promedio de ingresos: ${promedioIngresos}</p>
+          <p>Promedio de gastos: ${promedioGastos}</p>
+          <p>Porcentaje de ahorro: {porcentajeAhorro}%</p>
+          <p>Relación ingresos/gastos: {totalIngresos - totalGastos}</p>
+        </div>
+
+        <h3>Gasto promedio por categoría</h3>
+
+        <ul className="categorias">
+          {Object.entries(gastosPorCategoria).map(([cat, val]) => (
+            <li key={cat}>{cat}: ${val}</li>
+          ))}
+        </ul>
+
       </div>
-
-      <h3>Gasto promedio por categoría</h3>
-      <ul className="categorias">
-        {Object.entries(gastosPorCategoria).map(([cat, val]) => (
-          <li key={cat}>{cat}: ${val}</li>
-        ))}
-      </ul>
     </div>
   );
 }

@@ -1,8 +1,11 @@
 import "./CategoryManager.scss";
-import React, { useState, useRef } from 'react';
+
+import Menu from "../../components/Menu/Menu.jsx";
+
+import { useRef, useState } from 'react';
 
 function CategoryManager() {
-  const [categorias, setCategorias] = useState(['Hogar', 'Viajes' , 'Alimentacion']);
+  const [categorias, setCategorias] = useState(['Hogar', 'Viajes', 'Alimentacion']);
   const inputRef = useRef();
 
   const eliminar = (nombre) => {
@@ -14,23 +17,32 @@ function CategoryManager() {
     if (nombre) {
       setCategorias([...categorias, nombre]);
     }
-    inputRef.current.value = ''; 
+    inputRef.current.value = '';
   };
 
   return (
-    <div className="category-container">
-      <h2>Categorías de Gastos</h2>
-      <ul>
-        {categorias.map((cat, index) => (
-          <li key={index}>
-            <span>{cat}</span>
-            <button onClick={() => eliminar(cat)}>X</button>
-          </li>
-        ))}
-      </ul>
-      <div>
-      <input type="text" ref={inputRef} />
-        <button onClick={agregar}>Agregar categoría</button>
+    <div className="category-manager">
+
+      <Menu />
+
+      <div className="category-container">
+
+        <h2>Categorías de Gastos</h2>
+
+        <ul>
+          {categorias.map((cat, index) => (
+            <li key={index}>
+              <span>{cat}</span>
+              <button onClick={() => eliminar(cat)}>X</button>
+            </li>
+          ))}
+        </ul>
+
+        <div>
+          <input type="text" ref={inputRef} />
+          <button onClick={agregar}>Agregar categoría</button>
+        </div>
+
       </div>
     </div>
   );

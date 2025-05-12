@@ -1,8 +1,7 @@
 .transaction-list {
-    width: 100%;
-    gap: 10px;
+    height: 100vh;
     display: flex;
-    flex-direction: column;
+    background-color: #36393f;
 
     p {
         color: #fff;

@@ -1,4 +1,10 @@
 .analysis {
+  height: 100vh;
+  display: flex;
+  background-color: #36393f;
+}
+
+.analysis-container {
   width: 100%;
   max-width: 500px;
   margin: 20px auto;
@@ -8,7 +14,8 @@
   font-family: Arial, sans-serif;
   color: #333;
 
-  h2, h3 {
+  h2,
+  h3 {
     text-align: center;
     margin-bottom: 15px;
     color: #2c3e50;
