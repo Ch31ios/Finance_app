@@ -54,7 +54,8 @@ app.post("/login", (req, res) => {
         res.send({ err: err });
       }
       if (result.length > 0) {
-        res.send({ login: true });
+        // Envía el estado de login y el username al frontend después de un login exitoso
+        res.send({ login: true, username: result[0].username });
       } else {
         res.send({ login: false });
       }

@@ -1,11 +1,21 @@
 import "./Menu.scss";
 
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 function Menu() {
+
+  const [username, setUsername] = useState("");
+
+  // Obtiene el username almacenado en localStorage al montar el componente
+  useEffect(() => {
+    const storedUsername = localStorage.getItem("username");
+    if (storedUsername) setUsername(storedUsername);
+  }, []);
+
   return (
     <aside>
-      <h2>Username</h2>
+      <h2>{username || "Username"}</h2>
       <nav>
         <ul>
           <li><Link to="/dashboard">Dashboard</Link></li>
@@ -20,6 +30,8 @@ function Menu() {
         onClick={() => {
           // Elimina el estado de autenticación
           localStorage.removeItem("isAuthenticated");
+          // Limpia el username al salir
+          localStorage.removeItem("username");
           window.location.href = "/login";
         }}
       >

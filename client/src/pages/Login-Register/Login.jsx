@@ -45,11 +45,13 @@ function Login() {
     }).then((response) => {
       // Si el login es exitoso, navega al dashboard
       if (response.data.login) {
+        // Guarda el estado de autenticación y el username en localStorage después de un login exitoso
         localStorage.setItem("isAuthenticated", "true");
+        localStorage.setItem("username", response.data.username);
         navigate("/dashboard");
       } else {
         // Si el login falla, muestra mensaje de error
-        setErrorMsg("login or password is invalid");
+        setErrorMsg("email or password is invalid");
         setError(true);
       }
     }).catch(() => {
@@ -61,7 +63,7 @@ function Login() {
 
   // Renderiza el mensaje de error si existe un error
   const message = error ? (
-    <span style={{ color: "#f23f43", marginLeft: 8 }}>
+    <span style={{ color: "#f23f43" }}>
       {errorMsg}
     </span>
   ) : null;
