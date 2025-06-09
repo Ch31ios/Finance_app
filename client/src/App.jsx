@@ -6,11 +6,11 @@ import Login from "./pages/Login-Register/Login.jsx";
 import Register from "./pages/Login-Register/Register.jsx";
 
 import Analysis from "./pages/Analysis/Analysis.jsx";
-import CategoryManager from "./pages/CategoryManager/CategoryManager.jsx";
 import Dashboard from "./pages/Dashboard/Dashboard.jsx";
+import Categories from "./pages/Transactions-Categories/Categories.jsx";
 
-import TransactionForm from "./pages/TransactionForm/TransactionForm.jsx";
 import TransactionList from "./pages/TransactionList/TransactionList.jsx";
+import Transactions from "./pages/Transactions-Categories/Transactions.jsx";
 
 import PrivateRoute from "./components/PrivateRoute/PrivateRoute.jsx";
 
@@ -50,18 +50,18 @@ function App() {
           }
         />
         <Route
-          path="/category-manager"
+          path="/categories"
           element={
             <PrivateRoute>
-              <CategoryManager />
+              <Categories />
             </PrivateRoute>
           }
         />
         <Route
-          path="/transaction-form"
+          path="/transactions"
           element={
             <PrivateRoute>
-              <TransactionForm />
+              <Transactions />
             </PrivateRoute>
           }
         />

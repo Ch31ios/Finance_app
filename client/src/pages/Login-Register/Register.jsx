@@ -122,7 +122,7 @@ function Register() {
               <span>Password</span>{message}
             </label>
             <input
-              type="text"
+              type="password"
               id="password"
               placeholder="Enter your password"
               value={password}

@@ -45,9 +45,10 @@ function Login() {
     }).then((response) => {
       // Si el login es exitoso, navega al dashboard
       if (response.data.login) {
-        // Guarda el estado de autenticación y el username en localStorage después de un login exitoso
+        // Guarda el estado de autenticación y username en localStorage después de un login exitoso
         localStorage.setItem("isAuthenticated", "true");
         localStorage.setItem("username", response.data.username);
+        // Ya no es necesario guardar el email
         navigate("/dashboard");
       } else {
         // Si el login falla, muestra mensaje de error
@@ -84,6 +85,7 @@ function Login() {
               type="email"
               id="email"
               placeholder="Enter your email"
+              value={email}
               onChange={(e) => {
                 setEmail(e.target.value)
               }}
@@ -98,6 +100,7 @@ function Login() {
               type="password"
               id="password"
               placeholder="Enter your password"
+              value={password}
               onChange={(e) => {
                 setPassword(e.target.value)
               }}

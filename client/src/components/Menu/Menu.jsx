@@ -15,12 +15,12 @@ function Menu() {
 
   return (
     <aside>
-      <h2>{username || "Username"}</h2>
+      <h2>{username}</h2>
       <nav>
         <ul>
           <li><Link to="/dashboard">Dashboard</Link></li>
-          <li><Link to="/category-manager">Category Manager</Link></li>
-          <li><Link to="/transaction-form">New Transaction</Link></li>
+          <li><Link to="/categories">Category Manager</Link></li>
+          <li><Link to="/transactions">New Transaction</Link></li>
           <li><Link to="/transaction-list">Transaction List</Link></li>
           <li><Link to="/analysis">Analysis</Link></li>
         </ul>
