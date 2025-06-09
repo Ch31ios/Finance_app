@@ -32,13 +32,20 @@ pnpm -v
    cd Finance_app
    ```
 
-3. Instala las dependencias:
+3. Navega en las diferentes subcarpetas:
+
+   ```bash
+   cd client
+   cd server
+   ```
+
+3. Instala las dependencias en cada una:
 
    ```bash
    pnpm install
    ```
 
-4. Inicia el proyecto con el siguiente comando:
+4. Inicia tanto el "client" como el "server" con el siguiente comando:
 
    ```bash
    pnpm start
